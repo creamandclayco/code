@@ -1,5 +1,5 @@
 
-<script>
+
 
   //GLOBAL VARS
   var cc_addToCartButton = document.querySelector(".add-to-cart-button");
@@ -561,9 +561,7 @@
 
     }
     
-  </script> 
-  
-  <script>
+
     // COLLECTION DYNAMIC BREADCRUMB
     
     var collectionPage = document.querySelector("[active-collection]");
@@ -584,4 +582,3 @@
   
     }
     
-</script>
