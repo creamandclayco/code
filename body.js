@@ -1,4 +1,4 @@
-console.log("Testing github");
+console.log("Testing jsdelivr");
 
 
   //GLOBAL VARS
