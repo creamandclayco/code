@@ -1,5 +1,3 @@
-console.log("Testing jsdelivr");
-
 
   //GLOBAL VARS
   var cc_addToCartButton = document.querySelector(".add-to-cart-button");
@@ -397,95 +395,6 @@ console.log("Testing jsdelivr");
       
 
 
-
-    // ENVELOPE COLORS
-    let envelopeColors = document.querySelector('.shop_envelope-colors');
-    let activeColorText = document.querySelector('.shop_envelope-title-active-type');
-
-    let envelopeLibrary = {
-      'White': {
-        bg: '#fff',
-        colorMatrix1: '0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 0.8 0',
-        colorMatrix2: '0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 0 0.827451 0 0 0 0.8 0',
-      },
-      'Cipria': {
-        bg: '#F6D2CE',
-        colorMatrix1: '0 0 0 0 0.811765 0 0 0 0 0.686275 0 0 0 0 0.670588 0 0 0 0.6 0',
-        colorMatrix2: '0 0 0 0 0.811422 0 0 0 0 0.685322 0 0 0 0 0.670037 0 0 0 0.8 0',
-      },
-      'Ivory': {
-        bg: '#F7F7F5',
-        colorMatrix1: '0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.784314 0 0 0 0.8 0',
-        colorMatrix2: '0 0 0 0 0.831225 0 0 0 0 0.831225 0 0 0 0 0.785647 0 0 0 0.8 0',
-      }
-    }
- 
-
-    if (envelopeColors && activeColorText && envelopeSVG){
-      let activeEnvelopeColor = '#fff';
-      let startingActiveEnvelopeColor = document.querySelector('input[name="Envelope-Color"]:checked');
-      let envelopeSVG_paths = envelopeSVG.querySelectorAll('path');
-      let envelopeSVG_colorMatrix1 = envelopeSVG.querySelector('.colorMatrix1');
-      let envelopeSVG_colorMatrix2 = envelopeSVG.querySelectorAll('.colorMatrix2');
-
-      //TODO get only the releveant envelope
-      let envelopeSVG = document.querySelector('.shop_envelope-svg[data-slug="""]');
-      let itemSlug = document.querySelector("[item-slug]").getAttribute('item-slug');
-      
-      if (startingActiveEnvelopeColor){
-        activeColorText.innerHTML = startingActiveEnvelopeColor.value;
-      }
-
-      envelopeColors.addEventListener('change', function(e){
-
-        activeColorText.innerHTML = e.target.value;
-        let activeColor = envelopeLibrary[e.target.value];
-
-        if (activeColor){
-          envelopeSVG_paths.forEach( path => {
-            path.style.fill = activeColor.bg;
-          })
-          envelopeSVG_colorMatrix1.setAttribute('values', activeColor.colorMatrix1);
-          envelopeSVG_colorMatrix2.setAttribute('values', activeColor.colorMatrix2);
-        } 
-        else {
-          console.error("Color selected is not in color library");
-        }
-
-      })
-    }
-
-    //Image switching
-      let shopImage = document.querySelector("#shopImage");
-
-      let letterist_bgColor = "#DFDBD3";
-      let romantic_bgColor = "#ECE8E1";
-      let modernist_bgColor = "#E5E3E0";
-      
-      let letterist_image = document.querySelector(".shop_view_image-letterist");
-      let romantic_image = document.querySelector(".shop_view_image-romantic");
-      let modernist_image = document.querySelector(".shop_view_image-modernist");
-    
-      function hideAllImages(){
-        letterist_image.style.height = 0;
-        romantic_image.style.height = 0;
-        modernist_image.style.height = 0;
-      }
-    
-      el_collection.addEventListener("change", function () {
-        var activeCollection = el_collection.value;
-        hideAllImages();
-        if (activeCollection === "The Letterist"){
-          letterist_image.style.height = "auto";
-        }
-        if (activeCollection === "The Romantic"){
-          romantic_image.style.height = "auto";
-        }
-        if (activeCollection === "The Modernist"){
-          modernist_image.style.height = "auto";
-        }
-        
-      });
 
 //Update Breadcrumb and Image if coming from a collection with param set
       
