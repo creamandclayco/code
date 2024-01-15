@@ -56,16 +56,17 @@ if (document.querySelector("#itemPricingForm")){
     }
 
     function updatePriceOnPage(){
+        let addToCartButton = document.querySelector(".add-to-cart-button");
         if (basePrice !== null && activeCollection !== null && activeQuantity !== null && activeQuantity !== "" && activePaper !== null && activePaper !== ""){
           let newPrice = calculatePrice(basePrice, activeQuantity, activePaper, hasEnvelopeAddressing);
           if (!isNaN(newPrice)){
               el_finalPrice.textContent = newPrice;
               el_finalPrice.setAttribute('form_item_final_price', newPrice)
-              if (newPrice !== 0 && cc_addToCartButton){
-                cc_addToCartButton.classList.remove('disabled');
+              if (newPrice !== 0 && addToCartButton){
+                addToCartButton.classList.remove('disabled');
               } else {
-                if (cc_addToCartButton){
-                  cc_addToCartButton.classList.add('disabled');
+                if (addToCartButton){
+                  addToCartButton.classList.add('disabled');
                 }
               }
             } else {
@@ -73,7 +74,7 @@ if (document.querySelector("#itemPricingForm")){
           }    
         }
         else {
-          console.log("Not all fields filled out to update price")
+        //   console.log("Not all fields filled out to update price")
         }
       }
 
